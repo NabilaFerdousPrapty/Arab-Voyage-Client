@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/FirebaseProvider";
+import toast from "react-hot-toast";
 
 
 const Signup = () => {
@@ -23,15 +24,30 @@ const Signup = () => {
   } = useForm();
 
 
-console.log(createUser);
-  
+
+const onSubmit = (data) => {console.log(data)
+    const { UserName, Email, password, confirmPassword, photoURL } = data;
+    if (password !== confirmPassword) {
+        alert("Password does not match");
+        return;
+    }
+    createUser(Email, password)
+        .then((result) => {
+        console.log(result);
+        toast.success("User created successfully");
+        })
+        .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+        });
+}
   
   return (
     <div className="flex justify-center items-center mt-10 ">
       
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl border-4 border-slate-500 my-2">
         <h1 className="text-2xl font-bold text-center">Sign Up</h1>
-        <form action="" className="space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} action="" className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="username" className="block text-gray-600">
               Username

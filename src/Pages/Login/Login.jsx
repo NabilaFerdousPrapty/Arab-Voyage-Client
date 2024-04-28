@@ -5,56 +5,55 @@ import { useLocation } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/FirebaseProvider";
 
 const Login = () => {
+  const {signInUser}=useContext(AuthContext);
   
   const [showPassword, setShowPassword] = useState(false);
   //navigation
   const navigate = useNavigate();
   const location = useLocation();
   const from = location?.state || "/";
-  // console.log(location);
+  console.log(location);
   const {
-    register,
-    handleSubmit,
-
-    formState: { errors },
-  } = useForm();
+    register,handleSubmit,formState: { errors }, } = useForm();
   const onSubmit = (data) => {
     // console.log(data);
-    const { Email, password } = data;
-    signInUser(Email, password)
+    const { email, password } = data;
+    signInUser(email, password)
       .then((result) => {
-        // console.log(result);
+         console.log(result);
         toast.success("Login successful");
         if (result.user) {
           navigate(from);
         }
       })
       .catch((err) => {
+		toast.error(err.message);
         console.log(err);
-        toast.error(err.message);
+       
       });
   };
 
-  const handleSocialLogin = (socialProvider) => {
-    socialProvider()
-      .then((result) => {
-        toast.success('You have   logged in', {
-          position: "top-center"
-        })
-        if (result.user) {
-          navigate(from);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(err.message),{
-          position: "top-center"
-        };
-      });
-  };
+//   const handleSocialLogin = (socialProvider) => {
+//     socialProvider()
+//       .then((result) => {
+//         toast.success('You have   logged in', {
+//           position: "top-center"
+//         })
+//         if (result.user) {
+//           navigate(from);
+//         }
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//         toast.error(err.message),{
+//           position: "top-center"
+//         };
+//       });
+//   };
 
   return (
     <div className="flex justify-center items-center mt-10">
@@ -71,10 +70,10 @@ const Login = () => {
               name="email"
               id="email"
               placeholder="User Email"
-              {...register("Email", { required: true })}
+              {...register("email", { required: true })}
               className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-indigo-600"
             />
-            {errors.Email && (
+            {errors.email && (
               <span className="text-red-600">This field is required</span>
             )}
           </div>
