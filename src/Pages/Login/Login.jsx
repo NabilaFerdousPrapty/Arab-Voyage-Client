@@ -5,12 +5,31 @@ import { useLocation } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../AuthProvider/FirebaseProvider";
+import { useState } from "react";
+
+import UseAuth from "../../hooks/UseAuth";
 
 const Login = () => {
-  const {signInUser}=useContext(AuthContext);
-  
+  const { signInUser, googleSignIn, githubSignIn } = UseAuth();
+  const handleSocialLogin = (socialProvider) => {
+    socialProvider()
+      .then((result) => {
+        toast.success("You have logged in", {
+          position: "top-center",
+        });
+        if (result.user) {
+          navigate(from);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message),
+          {
+            position: "top-center",
+          };
+      });
+  };
+
   const [showPassword, setShowPassword] = useState(false);
   //navigation
   const navigate = useNavigate();
@@ -18,46 +37,31 @@ const Login = () => {
   const from = location?.state || "/";
   console.log(location);
   const {
-    register,handleSubmit,formState: { errors }, } = useForm();
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (data) => {
     // console.log(data);
     const { email, password } = data;
     signInUser(email, password)
       .then((result) => {
-         console.log(result);
+        console.log(result);
         toast.success("Login successful");
         if (result.user) {
           navigate(from);
         }
       })
       .catch((err) => {
-		toast.error(err.message);
+        toast.error(err.message);
         console.log(err);
-       
       });
   };
 
-//   const handleSocialLogin = (socialProvider) => {
-//     socialProvider()
-//       .then((result) => {
-//         toast.success('You have   logged in', {
-//           position: "top-center"
-//         })
-//         if (result.user) {
-//           navigate(from);
-//         }
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//         toast.error(err.message),{
-//           position: "top-center"
-//         };
-//       });
-//   };
+
 
   return (
     <div className="flex justify-center items-center mt-10">
-      
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl  ">
         <h1 className="text-2xl font-bold text-center">Login</h1>
         <form onSubmit={handleSubmit(onSubmit)} action="" className="space-y-6">

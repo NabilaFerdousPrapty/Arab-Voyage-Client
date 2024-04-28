@@ -10,6 +10,9 @@ import MyList from "../Pages/MyList/MyList";
 import Login from "../Pages/Login/Login";
 import SignUp from './../Pages/SignUp';
 import Error from "../Pages/Error/Error";
+import TouristSpotDetails from "../components/TouristSpotDetails/TouristSpotDetails";
+import PrivateRoute from "../components/Private/PrivateRoute";
+import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 
   const router = createBrowserRouter([
     {
@@ -24,7 +27,9 @@ import Error from "../Pages/Error/Error";
         },
         {
           path:"/addTouristSpot",
-        element:<AddTouristSpot/>,
+        element:<PrivateRoute>
+          <AddTouristSpot/>
+        </PrivateRoute>,
         },{
           path:'allTouristSpots',
           element:<AllTouristSpots/>,
@@ -32,7 +37,9 @@ import Error from "../Pages/Error/Error";
 
         },{
           path:'/myList',
-          element:<MyList/>
+          element:<PrivateRoute>
+            <MyList/>
+          </PrivateRoute>
         },
         {
          path:'/login',
@@ -40,6 +47,16 @@ import Error from "../Pages/Error/Error";
         },{
           path:'/signUp',
           element:<SignUp/>
+        },{
+         path:'/updateProfile',
+         element:<UpdateProfile/>
+        },
+        {
+          path:'/touristSpotDetails/:id',
+          element:<PrivateRoute>
+            <TouristSpotDetails/>
+          </PrivateRoute>
+
         }
       ]
     },

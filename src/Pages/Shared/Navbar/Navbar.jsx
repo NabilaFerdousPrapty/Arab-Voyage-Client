@@ -6,12 +6,12 @@ import userImg from "../../../assets/user.png";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user,logOut } = useContext(AuthContext);
 
   const handleTooltipContent = () => {
-    // Check if user is logged in and has displayName
+    
     if (user && user.displayName) {
-      return ` ${user.displayName}!`; // Dynamic content
+      return `${user.displayName}`; // Dynamic content
     } else {
       return 'No User Name'; // Default content
     }
@@ -45,12 +45,13 @@ const Navbar = () => {
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
+                <NavLink to="/allTouristSpots">All Tourist Spots</NavLink>
+              </li>
+              <li>
                 <NavLink to="/addTouristSpot"> Add Tourist Spots</NavLink>
               </li>
 
-              <li>
-                <NavLink to="/allTouristSpots">All Tourist Spots</NavLink>
-              </li>
+             
               <li>
                 <NavLink to="/myList">My List</NavLink>
               </li>
@@ -66,12 +67,13 @@ const Navbar = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
+              <NavLink to="/allTouristSpots">All Tourist Spots</NavLink>
+            </li>
+            <li>
               <NavLink to="/addTouristSpot"> Add Tourist Spots</NavLink>
             </li>
 
-            <li>
-              <NavLink to="/allTouristSpots">All Tourist Spots</NavLink>
-            </li>
+           
             <li>
               <NavLink to="/myList">My List</NavLink>
             </li>
@@ -124,7 +126,7 @@ const Navbar = () => {
               >
                 <div className="">
                   <li>
-                    <Link to="/logOut">Log Out</Link>
+                    <div onClick={logOut} className="">Log Out</div>
                   </li>
                   <li>
                     <NavLink to="/updateProfile" className="">

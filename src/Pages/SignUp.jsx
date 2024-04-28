@@ -1,21 +1,22 @@
 import { useForm } from "react-hook-form";
-
+import { toast } from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-
-import { Link } from 'react-router-dom';
-
-import { useContext, useState } from "react";
-import { AuthContext } from "../AuthProvider/FirebaseProvider";
-import toast from "react-hot-toast";
+import { Link, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useState } from "react";
+import UseAuth from "../hooks/UseAuth";
 
 
 const Signup = () => {
- 
+  const { createUser,updateUserProfile } = UseAuth()
+   //navigation
+   const navigate = useNavigate();
+   const location = useLocation();
+   const from = location?.state || "/";
+  
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
- const { createUser } = useContext(AuthContext);
- 
  
   const {
     register,
@@ -24,42 +25,58 @@ const Signup = () => {
   } = useForm();
 
 
-
-const onSubmit = (data) => {console.log(data)
-    const { UserName, Email, password, confirmPassword, photoURL } = data;
+  const onSubmit = (data) => {
+    const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    console.log(data);
+    // setRegisterError('');
+    const { UserName, Email, password, photoURL, confirmPassword } = data;
     if (password !== confirmPassword) {
-        alert("Password does not match");
-        return;
+      toast.error("Passwords do not match");
+      return;
+    }
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters");
+      return;
+    } else if (!regex.test(password)) {
+      toast.error("Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters");
+      return;
     }
     createUser(Email, password)
-        .then((result) => {
-        console.log(result);
-        toast.success("User created successfully");
+      .then(() => {
+        updateUserProfile(UserName, photoURL)
+        .then(()=>{
+          toast.success("Account created successfully");
+        
+          navigate(from);
+        
         })
-        .catch((err) => {
+        
+      })
+      .catch((err) => {
         console.log(err);
         toast.error(err.message);
-        });
-}
+      });
+  };
+  
   
   return (
-    <div className="flex justify-center items-center mt-10 ">
-      
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl border-4 border-slate-500 my-2">
+    <div className="flex justify-center items-center mt-10">
+     
+      <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-50 text-gray-800">
         <h1 className="text-2xl font-bold text-center">Sign Up</h1>
         <form onSubmit={handleSubmit(onSubmit)} action="" className="space-y-6">
           <div className="space-y-1 text-sm">
             <label htmlFor="username" className="block text-gray-600">
               Username
             </label>
-            <input 
+            <input
               type="text"
               name="username"
               id="username"
               placeholder="Username"
               {...register("UserName", { required: true }) } 
               
-              className="w-full px-4 py-3 rounded-md border-gray-300   focus:border-indigo-600"
+              className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-indigo-600"
             />
               {errors.UserName && <span className="text-red-600">This field is required</span>}
           </div>
@@ -134,13 +151,13 @@ const onSubmit = (data) => {console.log(data)
 
           <button
             type="submit"
-            className="block w-full p-3 text-center rounded-lg text-white bg-gray-800 "
+            className="block w-full p-3 text-center rounded-lg text-white bg-gray-800 hover:bg-gray-900"
           >
             Sign Up
           </button>
           <p className="text-xs text-center sm:px-6 text-gray-600">
           Already have an account?
-          <Link to="/login" className="underline text-gray-600">
+          <Link to="/login" className="underline text-slate-700">
             Sign in
           </Link>
         </p>
