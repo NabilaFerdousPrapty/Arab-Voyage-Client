@@ -42,7 +42,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-       <NavLink to="/" className="text-2xl font-logo font-extrabold">  Arab Voyage</NavLink>
+       <NavLink to="/" className="text-2xl font-logo font-extrabold">Arab Voyage</NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal lg:px-1">

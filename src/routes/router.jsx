@@ -16,13 +16,15 @@ import MyList from "../Pages/MyList/MyList";
         {
           path:"/",
         element:<Home/>,
+        loader:()=>(fetch('http://localhost:5000/spots'))
         },
         {
           path:"/addTouristSpot",
         element:<AddTouristSpot/>,
         },{
           path:'allTouristSpots',
-          element:<AllTouristSpots/>
+          element:<AllTouristSpots/>,
+          loader:()=>(fetch('http://localhost:5000/spots'))
 
         },{
           path:'/myList',
