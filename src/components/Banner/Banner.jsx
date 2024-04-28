@@ -39,9 +39,18 @@ const Banner = () => {
             }}
           >
            
-           <div className="text-center">
-           
-           </div>
+           <div className="lg:pt-28 pt-14 title text-white font-bold lg:text-5xl md:text-3xl text-2xl text-center" data-swiper-parallax="-300">
+           Explore the Enchantment of the Middle East
+          </div>
+          <div className="subtitle text-white text-center lg:py-8 py-3 lg:text-3xl md:text-2xl text-sm" data-swiper-parallax="-200">
+          Unveiling cultural treasures, breathtaking landscapes, and modern marvels
+          </div>
+          <div className="text text-center md:text-xl text-xs text-white" data-swiper-parallax="-80">
+            <p>
+            Embark on an unforgettable journey through the heart of the Middle East. Discover ancient wonders in Jordan, from Petra's rose-red city to the Dead Sea's therapeutic waters. Immerse yourself in the rich tapestry of Saudi Arabia, from the sacred city of Makkah to the futuristic metropolis of Neom. Dazzle your senses in the United Arab Emirates, where towering skyscrapers meet pristine beaches. Explore the historical sites and vibrant culture of Iran. Experience the luxurious hospitality of Qatar. Unwind in the comfort of Kuwait's modern amenities. The Middle East is a land of endless possibilities, waiting to be explored.
+            </p>
+            <div className="btn my-4">Explore</div>
+          </div>
            
           </div>
         </SwiperSlide>
@@ -51,7 +60,23 @@ const Banner = () => {
               backgroundImage: `url(${rum})`,
             }}
           >
-            <h1>Slide1</h1>
+            <div className="pt-10 title text-white font-bold text-5xl flex justify-center items-center" data-swiper-parallax="-300">
+            Slide 1
+          </div>
+          <div className="subtitle" data-swiper-parallax="-200">
+            Subtitle
+          </div>
+          <div className="text" data-swiper-parallax="-100">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            </p>
+          </div>
           </div>
         </SwiperSlide>
           <SwiperSlide>
@@ -60,7 +85,23 @@ const Banner = () => {
               backgroundImage: `url(${us})`,
             }}
           >
-            <h1>Slide1</h1>
+           <div className="pt-10 title text-white font-bold text-5xl flex justify-center items-center" data-swiper-parallax="-300">
+            Slide 1
+          </div>
+          <div className="subtitle" data-swiper-parallax="-200">
+            Subtitle
+          </div>
+          <div className="text" data-swiper-parallax="-100">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            </p>
+          </div>
           </div>
         </SwiperSlide>
           <SwiperSlide>
@@ -69,7 +110,23 @@ const Banner = () => {
               backgroundImage: `url(${plam})`,
             }}
           >
-            <h1>Slide1</h1>
+            <div className="pt-10 title text-white font-bold text-5xl flex justify-center items-center" data-swiper-parallax="-300">
+            Slide 1
+          </div>
+          <div className="subtitle" data-swiper-parallax="-200">
+            Subtitle
+          </div>
+          <div className="text" data-swiper-parallax="-100">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            </p>
+          </div>
           </div>
         </SwiperSlide>
           <SwiperSlide>
@@ -78,7 +135,23 @@ const Banner = () => {
               backgroundImage: `url(${redSea})`,
             }}
           >
-            <h1>Slide1</h1>
+             <div className="pt-10 title text-white font-bold text-5xl flex justify-center items-center" data-swiper-parallax="-300">
+            Slide 1
+          </div>
+          <div className="subtitle" data-swiper-parallax="-200">
+            Subtitle
+          </div>
+          <div className="text" data-swiper-parallax="-100">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            </p>
+          </div>
           </div>
         </SwiperSlide>
         

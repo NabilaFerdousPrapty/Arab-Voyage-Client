@@ -7,6 +7,8 @@ import Home from "../Pages/Home/Home";
 import AddTouristSpot from './../Pages/AddTouristSpot/AddTouristSpot';
 import AllTouristSpots from "../Pages/AllTouristSpots/AllTouristSpots";
 import MyList from "../Pages/MyList/MyList";
+import Login from "../Pages/Login/Login";
+import SignUp from './../Pages/SignUp';
 
   const router = createBrowserRouter([
     {
@@ -31,7 +33,11 @@ import MyList from "../Pages/MyList/MyList";
           element:<MyList/>
         },
         {
-         path:''
+         path:'/login',
+          element:<Login/>
+        },{
+          path:'/signUp',
+          element:<SignUp/>
         }
       ]
     },
