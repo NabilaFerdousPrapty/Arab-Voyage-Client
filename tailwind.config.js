@@ -7,7 +7,8 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
-      logo:[  "Stylish", 'serif']
+      logo:[  "Stylish", 'serif'],
+      raleway: ["Raleway", "sans-serif"],
     },
 
     extend: {},

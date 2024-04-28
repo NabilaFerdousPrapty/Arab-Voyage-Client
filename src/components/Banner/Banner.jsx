@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import park from '../../assets/Al Shaheed Park -3.jpg'
-import theran from '../../assets/Tehran2.jpg'
+import dark from '../../assets/banner.png'
 import redSea from '../../assets/the-red-sea.jpg'
 import expore from '../../assets/explore.png'
 import rum from '../../assets/Wadi Rum.jpg'
@@ -60,22 +59,17 @@ const Banner = () => {
               backgroundImage: `url(${rum})`,
             }}
           >
-            <div className="pt-10 title text-white font-bold text-5xl flex justify-center items-center" data-swiper-parallax="-300">
-            Slide 1
+          <div className="lg:pt-28 pt-14 title text-white font-bold lg:text-5xl md:text-3xl text-2xl text-center" data-swiper-parallax="-300">
+          Where History Whispers in the Wind
           </div>
-          <div className="subtitle" data-swiper-parallax="-200">
-            Subtitle
+          <div className="subtitle text-white text-center lg:py-8 py-3 lg:text-3xl md:text-2xl text-sm" data-swiper-parallax="-200">
+          Explore ancient ruins, captivating landscapes, and the Dead Sea's unique experience
           </div>
-          <div className="text" data-swiper-parallax="-100">
+          <div className="text text-center md:text-xl text-xs text-white" data-swiper-parallax="-80">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            Journey through time in Jordan. Delve into the awe-inspiring city of Petra, a UNESCO World Heritage Site carved from rose-red sandstone cliffs. Float effortlessly in the Dead Sea, the Earth's lowest point, renowned for its therapeutic waters. Explore the captivating desert landscapes of Wadi Rum, a UNESCO World Heritage Site known as the "Valley of the Moon." Discover the ancient ruins of Jerash, a Greco-Roman city that dates back to the Bronze Age. Jordan is a land of enchanting beauty and rich history, waiting to be explored.
             </p>
+            <div className="btn my-4">Explore</div>
           </div>
           </div>
         </SwiperSlide>
@@ -85,72 +79,58 @@ const Banner = () => {
               backgroundImage: `url(${us})`,
             }}
           >
-           <div className="pt-10 title text-white font-bold text-5xl flex justify-center items-center" data-swiper-parallax="-300">
-            Slide 1
+          <div className="lg:pt-28 pt-14 title text-white font-bold lg:text-5xl md:text-3xl text-2xl text-center" data-swiper-parallax="-300">
+          Unveiling Ancient Treasures and Modern Marvels
           </div>
-          <div className="subtitle" data-swiper-parallax="-200">
-            Subtitle
+          <div className="subtitle text-white text-center lg:py-8 py-3 lg:text-3xl md:text-2xl text-sm" data-swiper-parallax="-200">
+          Explore historical sites, vibrant culture, and futuristic visions
           </div>
-          <div className="text" data-swiper-parallax="-100">
+          <div className="text text-center md:text-xl text-xs text-white" data-swiper-parallax="-80">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            Experience the rich tapestry of Saudi Arabia. Visit the sacred city of Makkah, the holiest site in Islam. Explore the UNESCO World Heritage Site of Mada'in Saleh, an ancient city carved from sandstone. Immerse yourself in the cultural and artistic scene of Riyadh, the capital city. Witness the futuristic metropolis of Neom, a vision for sustainable living.
             </p>
+            <div className="btn my-4">Explore</div>
           </div>
           </div>
         </SwiperSlide>
           <SwiperSlide>
-          <div className="bg-center bg-cover bg-no-repeat h-screen rounded-2xl"
+          <div className="bg-center bg-cover bg-no-repeat h-screen rounded-2xl brightness-50"
             style={{
               backgroundImage: `url(${plam})`,
+              
             }}
           >
-            <div className="pt-10 title text-white font-bold text-5xl flex justify-center items-center" data-swiper-parallax="-300">
-            Slide 1
+         <div className="lg:pt-28 pt-8 title text-gray-600 font-bold lg:text-5xl md:text-3xl text-2xl text-center" data-swiper-parallax="-300">
+         United Arab Emirates: Where Luxury Meets Adventure
           </div>
-          <div className="subtitle" data-swiper-parallax="-200">
-            Subtitle
+          <div className="subtitle text-gray-600 text-center lg:py-8 py-2 lg:text-3xl md:text-2xl text-sm" data-swiper-parallax="-200">
+          Experience world-class attractions, pristine beaches, and vibrant culture
           </div>
-          <div className="text" data-swiper-parallax="-100">
+          <div className="text text-center md:text-xl text-xs text-gray-100" data-swiper-parallax="-80">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            Dazzle your senses in the United Arab Emirates. Ascend the iconic Burj Khalifa, the tallest building in the world. Explore the opulent desert resorts and traditional souks. Relax on pristine beaches with turquoise waters. Immerse yourself in the vibrant culture of Dubai and Abu Dhabi.
             </p>
+            <div className="btn my-4">Explore</div>
           </div>
           </div>
         </SwiperSlide>
           <SwiperSlide>
-          <div className="bg-center bg-cover bg-no-repeat h-screen rounded-2xl"
+          <div className="bg-center bg-cover bg-no-repeat h-screen rounded-2xl "
             style={{
-              backgroundImage: `url(${redSea})`,
+              backgroundImage: `url(${dark})`,
             }}
           >
-             <div className="pt-10 title text-white font-bold text-5xl flex justify-center items-center" data-swiper-parallax="-300">
-            Slide 1
+          <div className="lg:pt-28 pt-14 title text-white font-bold lg:text-5xl md:text-3xl text-2xl text-center" data-swiper-parallax="-300">
+          Unveiling a Land of Rich History and Culture
           </div>
-          <div className="subtitle" data-swiper-parallax="-200">
-            Subtitle
+          <div className="subtitle text-white  text-center lg:py-8 py-3 lg:text-3xl md:text-2xl text-sm" data-swiper-parallax="-200">
+          Explore ancient ruins, architectural wonders, and vibrant traditions.
           </div>
-          <div className="text" data-swiper-parallax="-100">
+          <div className="text text-center md:text-xl text-xs text-white" data-swiper-parallax="-80">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+             Explore the historical sites of Iran. Marvel at the architectural wonders of Isfahan, a UNESCO World Heritage Site. Immerse yourself in the rich tapestry of Persian culture. Visit the ancient city of Persepolis, a UNESCO World Heritage Site, and marvel at the remnants of the Achaemenid Empire. Discover the vibrant bazaars and traditional tea houses of Tehran. Iran is a land of rich history and culture, waiting to be explored.
             </p>
+            <div className="btn my-4">Explore</div>
           </div>
           </div>
         </SwiperSlide>

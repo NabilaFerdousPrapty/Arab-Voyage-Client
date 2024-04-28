@@ -16,7 +16,7 @@ const TouristSpotCard = ({ spot }) => {
   } = spot;
   return (
     <div className="">
-      <div className="max-w-lg p-4 shadow-md  border-2 border-gray-400 rounded-2xl my-6 h-[500px]">
+      <div className="max-w-lg p-4 shadow-md  border-2 border-gray-400 rounded-2xl md:my-3 h-[500px]">
         <div className="flex justify-between pb-4 border-bottom">
           <div className="flex items-center">
             <a
