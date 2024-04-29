@@ -90,7 +90,7 @@ const TouristSpotCard = ({ spot }) => {
             </a>
             <p className="leading-snug text-gray-600">
               {
-                shortDescription.slice(0, 100)
+                shortDescription.slice(0, 80)
               
               }
               ........

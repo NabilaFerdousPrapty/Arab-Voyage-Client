@@ -46,13 +46,25 @@ const AddTouristSpot = () => {
             text: "Your tourist spot has been added successfully!",
             icon: "success",
             confirmButtonText: "Cool",
-          });
+
+          })
+          form.reset();
+        }else{
+          Swal.fire({
+            title: "OOPS!",
+            text: "Your tourist spot has not been added",
+            icon: "Error",
+            confirmButtonText: "Cool",
+
+          })
+          form.reset();
         }
       });
   };
 
   return (
     <div>
+      <div>
       <h1 className=" text-center font-bold my-5">Add Tourist Spot</h1>
       <section className="p-6">
         <form
@@ -223,6 +235,7 @@ const AddTouristSpot = () => {
           </div>
         </form>
       </section>
+    </div>
     </div>
   );
 };

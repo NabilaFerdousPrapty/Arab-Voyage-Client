@@ -49,7 +49,9 @@ import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
           element:<SignUp/>
         },{
          path:'/updateProfile',
-         element:<UpdateProfile/>
+         element:<PrivateRoute>
+          <UpdateProfile/>
+         </PrivateRoute>
         },
         {
           path:'/touristSpotDetails/:id',
