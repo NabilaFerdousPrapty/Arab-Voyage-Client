@@ -10,7 +10,7 @@ const MyList = () => {
   
   console.log(user);
   useEffect(() => {
-    fetch(`https://arab-voyage-server-jo217jdwx-nabila-ferdous-projects.vercel.app/myList/${user?.email}`)
+    fetch(`https://arab-voyage-server.vercel.app/myList/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
@@ -30,7 +30,7 @@ const MyList = () => {
   
     if (confirmation.isConfirmed) {
       try {
-        const response = await fetch(`https://arab-voyage-server-jo217jdwx-nabila-ferdous-projects.vercel.app/deleteSpot/${id}`, {
+        const response = await fetch(`https://arab-voyage-server.vercel.app/deleteSpot/${id}`, {
           method: "DELETE",
         });
   

@@ -10,7 +10,7 @@ const UpdateTouristSpot = () => {
   console.log(id);
   const [spot, setSpot] = useState([]);
   useEffect(() => {
-    fetch(`https://arab-voyage-server-jo217jdwx-nabila-ferdous-projects.vercel.app/singleSpot/${id}`)
+    fetch(`https://arab-voyage-server.vercel.app/singleSpot/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSpot(data);
@@ -47,7 +47,7 @@ const UpdateTouristSpot = () => {
       
     };
     console.log(updateSpot);
-    fetch(`https://arab-voyage-server-jo217jdwx-nabila-ferdous-projects.vercel.app/updateSpot/${id}`, {
+    fetch(`https://arab-voyage-server.vercel.app/updateSpot/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
