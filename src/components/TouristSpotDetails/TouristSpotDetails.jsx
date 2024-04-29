@@ -57,7 +57,7 @@ const TouristSpotDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data. modifiedCount>0) {
           Swal.fire({
             title: "Congratulations!",
             text: "Your tourist spot has been Updated successfully!",
@@ -76,6 +76,10 @@ const TouristSpotDetails = () => {
         }
       });
   };
+  
+
+ 
+  
   return (
     <div>
       <div className="">
@@ -161,13 +165,14 @@ const TouristSpotDetails = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center gap-2">
         <div
           onClick={toggleFormVisibility}
           className="btn bg-gray-800 px-2 py-1 rounded-md text-white my-3 hover:bg-gray-500"
         >
           Update Tourist Spot
         </div>
+        
       </div>
       {!hide && (
         <section className="p-6 border-2 border-gray-600 rounded-xl my-5">

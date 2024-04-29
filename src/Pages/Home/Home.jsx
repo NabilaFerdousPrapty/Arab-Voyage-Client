@@ -12,7 +12,14 @@ const Home = () => {
         <div>
            <Banner/>
            <Sponsers/>
-           <TouristsSpots data={data}/>
+         <div className=' my-5'>
+            <h1 className="text-center font-raleway md:text-4xl text-2xl font-extrabold">Some Tourist Spots</h1>
+         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-1'>
+          {
+            data.slice(0,6).map((item,index)=><TouristsSpots key={index} data={item}/>)
+           }
+          </div>
+         </div>
            <Feature/>
            <FAQ/>
         </div>

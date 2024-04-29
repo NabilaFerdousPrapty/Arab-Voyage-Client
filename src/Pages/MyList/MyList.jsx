@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import UseAuth from "../../hooks/UseAuth";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyList = () => {
   const { user } = UseAuth() || {};
   const [items, setItems] = useState([]);
+  const [control,setControl]=useState(false)
   console.log(user);
   useEffect(() => {
     fetch(`http://localhost:5000/myList/${user?.email}`)
@@ -13,7 +15,61 @@ const MyList = () => {
         setItems(data);
         console.log(data);
       });
-  }, []);
+  }, [user,control]);
+  const handleDelete = async (id) => {
+    const confirmation = await Swal.fire({
+      title: 'Are you sure you want to delete this tourist spot?',
+      text: "This action cannot be undone!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6', // Customize confirmation button color (optional)
+      cancelButtonColor: '#d33', // Customize cancel button color (optional)
+      confirmButtonText: 'Yes, delete it!'
+    });
+  
+    if (confirmation.isConfirmed) {
+      try {
+        const response = await fetch(`http://localhost:5000/deleteSpot/${id}`, {
+          method: "DELETE",
+        });
+  
+        if (!response.ok) {
+          throw new Error('Failed to delete tourist spot');
+        }
+  
+        const data = await response.json();
+  
+        if (data.deletedCount > 0) {
+          setControl(!control)
+          console.log('Tourist spot deleted successfully:', data);
+          Swal.fire({
+            title: 'Congratulations!',
+            text: 'Your tourist spot has been deleted successfully!',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          });
+          
+        } else {
+          Swal.fire({
+            title: 'OOPS!',
+            text: 'Your tourist spot has not been deleted',
+            icon: 'Error',
+            confirmButtonText: 'Cool'
+          });
+        }
+      } 
+      catch (error) {
+        console.error('Error deleting tourist spot:', error);
+        Swal.fire({
+          title: 'Error!',
+          text: 'An error occurred while deleting the tourist spot. Please try again later.',
+          icon: 'error',
+          confirmButtonText: 'Ok'
+        });
+      }
+    }
+  };
+
   return (
     <div>
       <section className="border-2  rounded-2xl my-7">
@@ -111,9 +167,9 @@ const MyList = () => {
                     </Link>
                   </td>
                   <td className="">
-                    <Link className="rounded-lg btn bg-blue-400 text-white">
+                    <div onClick={()=>handleDelete(item._id)} className="rounded-lg btn bg-blue-400 text-white">
                       Delete
-                    </Link>
+                    </div>
                   </td>
                 </tr>
               </tbody>
