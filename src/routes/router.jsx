@@ -13,6 +13,7 @@ import Error from "../Pages/Error/Error";
 import TouristSpotDetails from "../components/TouristSpotDetails/TouristSpotDetails";
 import PrivateRoute from "../components/Private/PrivateRoute";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
+import UpdateTouristSpot from "../components/Update/UpdateTouristSpot";
 
   const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
         {
           path:"/",
         element:<Home/>,
-        loader:()=>(fetch('http://localhost:5000/spots'))
+        loader:()=>(fetch('https://arab-voyage-server.vercel.app/spots'))
         },
         {
           path:"/addTouristSpot",
@@ -33,7 +34,7 @@ import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
         },{
           path:'allTouristSpots',
           element:<AllTouristSpots/>,
-          loader:()=>(fetch('http://localhost:5000/spots'))
+          loader:()=>(fetch('https://arab-voyage-server.vercel.app/spots'))
 
         },{
           path:'/myList',
@@ -59,7 +60,15 @@ import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
             <TouristSpotDetails/>
           </PrivateRoute>
 
+        },{
+          path:'/updateTouristSpot/:id',
+          element:<PrivateRoute>
+            <UpdateTouristSpot></UpdateTouristSpot>
+          </PrivateRoute>
+            
         }
+
+
       ]
     },
   ]);

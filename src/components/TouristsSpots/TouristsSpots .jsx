@@ -1,8 +1,10 @@
 import { IoLocationOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 
 const TouristsSpots = ({data}) => {
   const {
+    _id,
     image,
     spotName,
     countryName,
@@ -94,10 +96,17 @@ const TouristsSpots = ({data}) => {
                 <h3 className="text-xl font-semibold text-indigo-600"></h3>
               </a>
               <p className="leading-snug text-gray-600">
-                {shortDescription}
+                {shortDescription.slice(0, 80)}.....
                 
               </p>
             </div>
+            <div className="flex justify-end items-end my-5">
+            <Link to={`/touristSpotDetails/${_id}`}
+              className="block w-full p-3 text-center rounded-sm text-white bg-gray-700 hover:bg-gray-900"
+            >
+              View Details
+            </Link>
+          </div>
           </div>
         </div>
       </div>

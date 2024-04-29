@@ -30,7 +30,7 @@ const AddTouristSpot = () => {
       email,
     };
     console.log(touristSpot);
-    fetch("http://localhost:5000/addSpot", {
+    fetch("https://arab-voyage-server-jo217jdwx-nabila-ferdous-projects.vercel.app/addSpot", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

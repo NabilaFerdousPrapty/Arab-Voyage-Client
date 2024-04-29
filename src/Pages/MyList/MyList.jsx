@@ -6,10 +6,11 @@ import Swal from "sweetalert2";
 const MyList = () => {
   const { user } = UseAuth() || {};
   const [items, setItems] = useState([]);
-  const [control,setControl]=useState(false)
+  const [control,setControl]=useState(false);
+  
   console.log(user);
   useEffect(() => {
-    fetch(`http://localhost:5000/myList/${user?.email}`)
+    fetch(`https://arab-voyage-server-jo217jdwx-nabila-ferdous-projects.vercel.app/myList/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
@@ -29,7 +30,7 @@ const MyList = () => {
   
     if (confirmation.isConfirmed) {
       try {
-        const response = await fetch(`http://localhost:5000/deleteSpot/${id}`, {
+        const response = await fetch(`https://arab-voyage-server-jo217jdwx-nabila-ferdous-projects.vercel.app/deleteSpot/${id}`, {
           method: "DELETE",
         });
   
@@ -160,7 +161,7 @@ const MyList = () => {
                   </td>
                   <td className="">
                     <Link
-                      to={`/touristSpotDetails/${item._id}`}
+                      to={`/updateTouristSpot/${item._id}`}
                       className="rounded-lg btn bg-sky-400 text-white"
                     >
                       Update
