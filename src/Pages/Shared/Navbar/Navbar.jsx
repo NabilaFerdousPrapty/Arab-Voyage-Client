@@ -1,19 +1,20 @@
-import { Link, NavLink } from "react-router-dom";
+import {  Link, NavLink } from "react-router-dom";
 import { IoIosLogIn } from "react-icons/io";
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/FirebaseProvider";
 import userImg from "../../../assets/user.png";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import '../../../assets/style.css'
 const Navbar = () => {
   const { user,logOut } = useContext(AuthContext);
 
   const handleTooltipContent = () => {
     
     if (user && user.displayName) {
-      return `${user.displayName}`; // Dynamic content
+      return `${user.displayName}`; 
     } else {
-      return 'No User Name'; // Default content
+      return 'No User Name'; 
     }
   };
   return (
@@ -57,9 +58,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <NavLink to="/" className="text-2xl font-logo font-extrabold">
-            Arab Voyage
-          </NavLink>
+          <Link to="/" className="text-2xl font-style font-extrabold">
+            Arab <span className="text-blue-500">Voyage</span>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal lg:px-1">

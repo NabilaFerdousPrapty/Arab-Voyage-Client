@@ -65,7 +65,7 @@ const AddTouristSpot = () => {
   return (
     <div>
       <div>
-      <h1 className=" text-center font-bold my-5">Add Tourist Spot</h1>
+      <h1 className="lg:text-5xl text-2xl text-center font-bold my-3 text-blue-500 font-raleway">Add Tourist Spot</h1>
       <section className="p-6">
         <form
           onSubmit={handleSubmit}
@@ -229,7 +229,7 @@ const AddTouristSpot = () => {
             </div>
           </fieldset>
           <div className="flex justify-center">
-            <button type="submit" className="btn w-full">
+            <button type="submit" className="btn w-full bg-sky-300">
               Submit
             </button>
           </div>

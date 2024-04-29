@@ -9,6 +9,7 @@ export default {
       sans: ["Inter", "sans-serif"],
       logo:[  "Stylish", 'serif'],
       raleway: ["Raleway", "sans-serif"],
+      style: ["UnifrakturCook", 'cursive'],
     },
 
     extend: {},
