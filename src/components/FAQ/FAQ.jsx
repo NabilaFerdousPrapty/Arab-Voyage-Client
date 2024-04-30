@@ -1,7 +1,7 @@
 const FAQ = () => {
     return (
       <div>
-        <section className="bg-gray-100 text-gray-800 lg:mt-9 mt-5 rounded-2xl mb-3">
+        <section className=" lg:mt-9 mt-5 rounded-2xl mb-3">
           <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
             <h2 className="text-2xl font-semibold sm:text-4xl text-gray-700">Frequently Asked Questions</h2>
             <p className="mt-4 mb-8 text-gray-600">

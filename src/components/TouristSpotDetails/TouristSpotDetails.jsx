@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { useParams } from "react-router-dom";
-import Swal from "sweetalert2";
 
 
 const TouristSpotDetails = () => {
@@ -10,7 +9,7 @@ const TouristSpotDetails = () => {
   console.log(id);
   const [spot, setSpot] = useState([]);
   useEffect(() => {
-    fetch(`https://arab-voyage-server-jo217jdwx-nabila-ferdous-projects.vercel.app/singleSpot/${id}`)
+    fetch(`https://arab-voyage-server.vercel.app/singleSpot/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setSpot(data);
@@ -18,7 +17,17 @@ const TouristSpotDetails = () => {
       });
   }, [id]);
   
-  
+  const {
+    spotName,
+    countryName,
+    locationName,
+    average_cost,
+    season,
+    travelTime,
+    totalVisitorsPerYear,
+    shortDescription,
+    image,
+  }=spot;
 
  
   

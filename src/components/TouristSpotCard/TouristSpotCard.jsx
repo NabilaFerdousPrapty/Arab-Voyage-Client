@@ -15,7 +15,7 @@ const TouristSpotCard = ({ spot }) => {
     username,
     email,
   } = spot;
-  console.log(spot);
+  // console.log(spot);
   return (
     <div className="">
       <div className="max-w-lg p-4 shadow-md  border-2 border-gray-400 rounded-2xl md:my-3 h-[650px]">

@@ -5,6 +5,7 @@ import FAQ from '../../components/FAQ/FAQ';
 import Feature from '../../components/Features/Feature';
 import Sponsers from '../../components/Sponsers/Sponsers';
 import TouristsSpots from '../../components/TouristsSpots/TouristsSpots ';
+import Countries from '../../components/Countries/Countries';
 
 const Home = () => {
     const data=useLoaderData()
@@ -21,6 +22,7 @@ const Home = () => {
           </div>
          </div>
            <Feature/>
+           <Countries/>
            <FAQ/>
         </div>
     );

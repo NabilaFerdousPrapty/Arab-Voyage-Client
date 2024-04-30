@@ -14,6 +14,8 @@ import TouristSpotDetails from "../components/TouristSpotDetails/TouristSpotDeta
 import PrivateRoute from "../components/Private/PrivateRoute";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import UpdateTouristSpot from "../components/Update/UpdateTouristSpot";
+import Countries from "../components/Countries/Countries";
+import CountrySpot from "../Pages/CountrySpots/CountrySpot";
 
   const router = createBrowserRouter([
     {
@@ -24,7 +26,8 @@ import UpdateTouristSpot from "../components/Update/UpdateTouristSpot";
         {
           path:"/",
         element:<Home/>,
-        loader:()=>(fetch('https://arab-voyage-server.vercel.app/spots'))
+        loader:()=>(fetch('https://arab-voyage-server.vercel.app/spots')),
+        
         },
         {
           path:"/addTouristSpot",
@@ -32,7 +35,7 @@ import UpdateTouristSpot from "../components/Update/UpdateTouristSpot";
           <AddTouristSpot/>
         </PrivateRoute>,
         },{
-          path:'allTouristSpots',
+          path:'/allTouristSpots',
           element:<AllTouristSpots/>,
           loader:()=>(fetch('https://arab-voyage-server.vercel.app/spots'))
 
@@ -53,6 +56,11 @@ import UpdateTouristSpot from "../components/Update/UpdateTouristSpot";
          element:<PrivateRoute>
           <UpdateProfile/>
          </PrivateRoute>
+        },{
+          path:'/touristSpots/:country_Name',
+          element:<PrivateRoute>
+            <CountrySpot/>
+          </PrivateRoute>
         },
         {
           path:'/touristSpotDetails/:id',
@@ -61,12 +69,19 @@ import UpdateTouristSpot from "../components/Update/UpdateTouristSpot";
           </PrivateRoute>
 
         },{
+          path:'/touristSpots/:id',
+          element:<PrivateRoute>
+            <CountrySpot></CountrySpot>
+          </PrivateRoute>
+        },
+          {
           path:'/updateTouristSpot/:id',
           element:<PrivateRoute>
             <UpdateTouristSpot></UpdateTouristSpot>
           </PrivateRoute>
+
             
-        }
+        },
 
 
       ]
