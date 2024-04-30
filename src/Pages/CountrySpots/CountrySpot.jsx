@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import TouristsSpots from '../../components/TouristsSpots/TouristsSpots ';
 
 const CountrySpot = () => {
     const { country_Name } = useParams();
@@ -14,8 +15,10 @@ const CountrySpot = () => {
       });
   }, [country_Name]);
     return (
-        <div>
-            
+        <div className='my-5'>
+            {
+                spot.map((item,index)=><TouristsSpots key={index} data={item}/>)
+            }
         </div>
     );
 };
