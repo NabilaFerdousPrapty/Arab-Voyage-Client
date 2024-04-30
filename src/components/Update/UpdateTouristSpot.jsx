@@ -112,7 +112,7 @@ const UpdateTouristSpot = () => {
               </div>
               <div className="text-center">
                 <span className="text-sm font-semibold text-gray-600">
-                  Average Cost:{" "}
+                  Average Cost:${" "}
                 </span>
                 <span className="text-sm font-semibold text-gray-600">
                   {spot.average_cost}
