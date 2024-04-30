@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import dark from '../../assets/banner.png'
-import redSea from '../../assets/the-red-sea.jpg'
+
 import expore from '../../assets/explore.png'
 import rum from '../../assets/Wadi Rum.jpg'
 import us from '../../assets/us.png'
