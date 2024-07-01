@@ -1,13 +1,8 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # Arab Voyage
-## Live Link:https://arabvoyage-4a1a4.web.app/
+## Live Link:
+If you want to experience full features
+[click here](https://altprodinsights.web.app/)
 #### Middle East  tourism-focused website
 
 ## Table of Contents
@@ -26,17 +21,8 @@ Arab Voyage is a tourism-focused website that offers a unique exploration of the
 
 ## Features
 - Responsive Design
-- Private Routes
-- Environment Variables
-- Navbar with Login/Register functionality
-- Authentication with email/password and social login options
-- Registration and Login pages
-- Toast/Sweet Alert for notifications
-- Homepage with sections such as Banner/Slider, Tourists Spots, Countries, and more
+- Real time notifications
 - Add Tourists Spot, My List, Update, and Delete functionalities
-- Footer with essential information and social media links
-- 404 Page for handling invalid URLs
-- Loading Spinner for data loading state
 - Dark/Light Theme Toggle
 
 ## Dependencies
@@ -134,9 +120,18 @@ ArabVoyage/
 
 ## Installation and Setup
 1. Clone the repository.
-2. Install dependencies using `npm install`.
+``` bash
+   git clone
+```
+2. Install dependencies using 
+``` bash
+npm install
+```
 3. Set up environment variables for Firebase and MongoDB credentials.
-4. Run the application using `npm start`.
+4. Run the application using 
+``` bash 
+npm run dev
+```
 
 ## Contributing
 Contributions are welcome! Feel free to open issues or pull requests for any improvements or new features.
