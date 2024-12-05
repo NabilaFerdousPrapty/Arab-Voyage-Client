@@ -2,7 +2,7 @@
 # Arab Voyage
 ## Live Link:
 If you want to experience full features
-[click here](https://altprodinsights.web.app/)
+[click here](https://arabvoyage-4a1a4.web.app/)
 #### Middle East  tourism-focused website
 
 ## Table of Contents
